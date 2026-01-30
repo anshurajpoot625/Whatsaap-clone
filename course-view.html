@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Course Details - Teacher Plus 24/7</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #f4f7fb;
+    }
+
+    /* ===== HEADER ===== */
+    header {
+      background: linear-gradient(135deg, #004aad, #00c6ff);
+      color: white;
+      padding: 15px;
+      text-align: center;
+      font-size: 22px;
+      font-weight: bold;
+    }
+
+    /* ===== COURSE BOX ===== */
+    .course-view {
+      max-width: 900px;
+      background: white;
+      margin: 25px auto;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.15);
+    }
+
+    .course-view img {
+      width: 100%;
+      border-radius: 10px;
+      margin-bottom: 15px;
+    }
+
+    .course-view h2 {
+      color: #004aad;
+      margin-bottom: 5px;
+    }
+
+    .teacher {
+      color: #777;
+      font-size: 14px;
+      margin-bottom: 12px;
+    }
+
+    .course-info {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+      margin-bottom: 15px;
+    }
+
+    .course-info div {
+      background: #eaf1ff;
+      padding: 8px 15px;
+      border-radius: 20px;
+      font-size: 13px;
+      color: #004aad;
+      font-weight: bold;
+    }
+
+    .description {
+      font-size: 15px;
+      line-height: 1.6;
+      color: #444;
+      margin-bottom: 20px;
+    }
+
+    /* ===== VIDEO ===== */
+    .video-box {
+      margin-bottom: 20px;
+    }
+
+    .video-box video {
+      width: 100%;
+      border-radius: 10px;
+    }
+
+    /* ===== BUTTONS ===== */
+    .btn-group {
+      display: flex;
+      gap: 10px;
+      flex-wrap: wrap;
+    }
+
+    .btn-group a {
+      text-decoration: none;
+      padding: 12px 25px;
+      border-radius: 25px;
+      font-weight: bold;
+      font-size: 14px;
+      color: white;
+      background: #004aad;
+      text-align: center;
+    }
+
+    .btn-group a:nth-child(2) {
+      background: #00a859;
+    }
+
+    .btn-group a:hover {
+      opacity: 0.9;
+    }
+
+  </style>
+</head>
+<body>
+
+  <!-- ✅ HEADER -->
+  <header>
+    Teacher Plus 24/7 – Course Details
+  </header>
+
+  <!-- ✅ COURSE VIEW -->
+  <div class="course-view">
+
+    <img src="https://via.placeholder.com/900x350" alt="Course Image">
+
+    <h2>Mathematics – Class 10</h2>
+    <div class="teacher">By: Mr. Sharma</div>
+
+    <div class="course-info">
+      <div>Subject: Math</div>
+      <div>Class: 10</div>
+      <div>Level: Beginner</div>
+      <div>Language: Hindi</div>
+    </div>
+
+    <div class="description">
+      Is course me aap Class 10 Mathematics ka poora syllabus step-by-step seekhoge.
+      Isme video lectures, practice questions aur PDF notes milenge.
+    </div>
+
+    <!-- ✅ VIDEO PLAYER -->
+    <div class="video-box">
+      <video controls>
+        <source src="sample-video.mp4" type="video/mp4">
+        Your browser does not support video.
+      </video>
+    </div>
+
+    <!-- ✅ BUTTONS -->
+    <div class="btn-group">
+      <a href="#">📄 Download Notes</a>
+      <a href="#">✅ Enroll Now</a>
+    </div>
+
+  </div>
+
+</body>
+</html>

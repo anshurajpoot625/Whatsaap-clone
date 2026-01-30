@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Course Completion Certificate</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  font-family: "Georgia", serif;
+  background:#f2f4f8;
+  display:flex;
+  justify-content:center;
+  align-items:center;
+  min-height:100vh;
+}
+
+.certificate{
+  background:#fff;
+  width:90%;
+  max-width:800px;
+  padding:40px;
+  border:10px solid #1e88e5;
+  position:relative;
+}
+
+.certificate::before{
+  content:"";
+  position:absolute;
+  top:15px;
+  left:15px;
+  right:15px;
+  bottom:15px;
+  border:2px dashed #1e88e5;
+}
+
+.content{
+  text-align:center;
+  position:relative;
+  z-index:1;
+}
+
+.logo{
+  font-size:28px;
+  font-weight:bold;
+  color:#1e88e5;
+}
+
+h1{
+  margin:20px 0 10px;
+  font-size:36px;
+}
+
+.subtitle{
+  font-size:18px;
+  margin-bottom:20px;
+}
+
+.name{
+  font-size:30px;
+  font-weight:bold;
+  color:#28a745;
+  margin:15px 0;
+}
+
+.course{
+  font-size:20px;
+  font-weight:bold;
+}
+
+.date{
+  margin-top:20px;
+  font-size:15px;
+}
+
+.signatures{
+  display:flex;
+  justify-content:space-between;
+  margin-top:50px;
+  padding:0 40px;
+}
+
+.sign{
+  text-align:center;
+}
+.sign hr{
+  width:160px;
+}
+.buttons{
+  text-align:center;
+  margin-top:25px;
+}
+.buttons button{
+  padding:10px 18px;
+  margin:5px;
+  font-size:14px;
+  border:none;
+  border-radius:6px;
+  cursor:pointer;
+}
+.print{
+  background:#1e88e5;
+  color:#fff;
+}
+.download{
+  background:#28a745;
+  color:#fff;
+}
+
+@media print{
+  body{
+    background:#fff;
+  }
+  .buttons{
+    display:none;
+  }
+}
+</style>
+</head>
+
+<body>
+
+<div class="certificate">
+  <div class="content">
+
+    <div class="logo">Teacher Plus 24/7</div>
+
+    <h1>Certificate of Completion</h1>
+    <div class="subtitle">
+      This is to certify that
+    </div>
+
+    <div class="name">Anshu Rajpoot</div>
+
+    <div class="subtitle">
+      has successfully completed the course
+    </div>
+
+    <div class="course">Mathematics Class 10</div>
+
+    <div class="date">
+      Date of Completion: <b>15 January 2026</b>
+    </div>
+
+    <div class="signatures">
+      <div class="sign"> 
+        <hr>
+        Instructor
+      </div>
+      <div class="sign">
+        <hr>
+        Platform Authority
+      </div>
+    </div>
+
+    <div class="buttons">
+      <button class="print" onclick="window.print()">Print Certificate</button>
+      <button class="download" onclick="window.print()">Download PDF</button>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>

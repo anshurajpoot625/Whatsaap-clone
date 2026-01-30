@@ -1,0 +1,134 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Teacher Plus | Registration</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #1d2671, #c33764);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .container {
+      background: #fff;
+      padding: 25px;
+      width: 350px;
+      border-radius: 10px;
+      box-shadow: 0 10px 30px rgba(0,0,0,0.3);
+    }
+
+    h2 {
+      text-align: center;
+      color: #1d2671;
+      margin-bottom: 20px;
+    }
+
+    input, select {
+      width: 100%;
+      padding: 10px;
+      margin: 8px 0;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      font-size: 14px;
+    }
+
+    button {
+      width: 100%;
+      padding: 10px;
+      margin-top: 12px;
+      border: none;
+      border-radius: 5px;
+      background: #1d2671;
+      color: white;
+      font-size: 16px;
+      cursor: pointer;
+    }
+
+    button:hover {
+      background: #c33764;
+    }
+
+    .login {
+      text-align: center;
+      margin-top: 10px;
+      font-size: 14px;
+    }
+
+    .login a {
+      text-decoration: none;
+      color: #1d2671;
+      font-weight: bold;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <h2>Teacher Plus Registration</h2>
+
+    <form onsubmit="return validateForm()">
+      <input type="text" id="name" placeholder="Full Name" required>
+      <input type="email" id="email" placeholder="Email Address" required>
+      <input type="tel" id="mobile" placeholder="Mobile Number" required>
+
+      <select id="role" required>
+        <option value="">Select Role</option>
+        <option value="teacher">Teacher</option>
+        <option value="student">Student</option>
+      </select>
+
+      <input type="password" id="password" placeholder="Password" required>
+      <input type="password" id="confirm" placeholder="Confirm Password" required>
+
+      <button type="submit">Register</button>
+    </form>
+
+    <div class="login">
+      Already registered? <a href="login.html">Login Here</a>
+    </div>
+  </div>
+
+  <script>
+    function validateForm() {
+      var pass = document.getElementById("password").value;
+      var conf = document.getElementById("confirm").value;
+
+      if (pass !== conf) {
+        alert("Password match nahi ho raha!");
+        return false;
+      }
+
+      alert("Teacher Plus Registration Successful!");
+      return true;
+    }
+  </script>
+<script>
+  function validateForm() {
+    var pass = document.getElementById("password").value;
+    var conf = document.getElementById("confirm").value;
+    var role = document.getElementById("role").value;
+
+    if (pass !== conf) {
+      alert("Password match nahi ho raha!");
+      return false;
+    }
+
+    // Role check (optional)
+    if (role === "student") {
+      window.location.href = "student-dashboard.html";
+    }  if (role === "teacher") {
+      window.location.href = "teacher-dashboard.html";
+    }
+
+    return false; // page reload rokne ke liye
+  }
+</script>
+</body>
+</html>
