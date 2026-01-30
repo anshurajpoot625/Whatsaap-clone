@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{margin:0;font-family:Arial;background:#ece5dd}
+.header{background:#075e54;color:#fff;padding:10px;display:flex;align-items:center}
+.chat{height:calc(100vh - 130px);padding:10px;overflow-y:auto}
+.msg{max-width:70%;padding:8px;margin:6px;border-radius:8px;font-size:14px;position:relative}
+.left{background:#fff}
+.right{background:#dcf8c6;margin-left:auto}
+.time{font-size:10px;color:#555;text-align:right}
+.tick{font-size:12px;margin-left:5px}
+.blue{color:#34b7f1}
+
+.input{display:flex;position:fixed;bottom:0;width:100%;background:#f0f0f0;padding:6px}
+.input input{flex:1;padding:10px;border:none;border-radius:20px}
+.input button{border:none;background:#075e54;color:#fff;border-radius:50%;width:42px;margin-left:5px}
+img.chat-img{max-width:100%;border-radius:8px}
+audio{width:100%}
+</style>
+</head>
+<body>
+
+<div class="header">
+<span onclick="history.back()">←</span>&nbsp;<b>Tanya</b>
+<div style="margin-left:10px">
+  <div><b>Tanya</b></div>
+  <div id="status" style="font-size:12px;color:#d0f0e0">online</div>
+</div>
+</div>
+<div id="typing" style="color:#d0f0e0;font-size:12px;margin-left:45px;display:none">
+  typing...
+</div>
+<div class="chat" id="chat"></div>
+
+<div class="input">
+<input id="text" placeholder="Message">
+<input type="file" id="img" accept="image/*" hidden>
+<button onclick="img.click()">📷</button>
+<button onclick="send()">➤</button>
+<button onclick="record()">🎤</button>
+</div>
+
+<script>
+let seen=false;
+let mediaRecorder, audioChunks=[];
+
+function send(){
+ let text=document.getElementById("text").value;
+ if(text=="") return;
+ addText(text,"right","✔✔");
+ document.getElementById("text").value="";
+
+ setTimeout(()=>markSeen(),1500);
+}
+
+function addText(msg,side,tick){
+ let d=document.createElement("div");
+ d.className="msg "+side;
+ d.innerHTML=msg+`<div class="time">12:00 <span class="tick">${tick}</span></div>`;
+ chat.appendChild(d);
+ chat.scrollTop=chat.scrollHeight;
+}
+
+function markSeen(){
+ let ticks=document.querySelectorAll(".tick");
+ ticks[ticks.length-1].classList.add("blue");
+}
+
+// 📷 IMAGE SEND
+img.onchange=function(){
+ let file=this.files[0];
+ let url=URL.createObjectURL(file);
+ let d=document.createElement("div");
+ d.className="msg right";
+ d.innerHTML=`<img src="${url}" class="chat-img"><div class="time">12:01 ✔✔</div>`;
+ chat.appendChild(d);
+ setTimeout(markSeen,1500);
+}
+
+// 🎤 VOICE RECORD
+function record(){
+ if(!mediaRecorder){
+  navigator.mediaDevices.getUserMedia({audio:true}).then(stream=>{
+   mediaRecorder=new MediaRecorder(stream);
+   mediaRecorder.start();
+   audioChunks=[];
+   mediaRecorder.ondataavailable=e=>audioChunks.push(e.data);
+   setTimeout(stopRec,3000);
+  });
+ }
+}
+
+function stopRec(){
+ mediaRecorder.stop();
+ mediaRecorder.onstop=()=>{
+  let blob=new Blob(audioChunks,{type:'audio/mp3'});
+  let url=URL.createObjectURL(blob);
+  let d=document.createElement("div");
+  d.className="msg right";
+  d.innerHTML=`<audio controls src="${url}"></audio><div class="time">12:02 ✔✔</div>`;
+  chat.appendChild(d);
+  markSeen();
+ };
+ mediaRecorder=null;
+}
+
+// 🤖 AUTO REPLY LOGIC
+function autoReply(msg){
+ msg=msg.toLowerCase();
+ let reply="Samajh nahi aaya 😅";
+
+ if(msg.includes("hi")||msg.includes("hello"))
+   reply="Hello 😊 kaise ho?";
+ else if(msg.includes("price"))
+   reply="Iska price ₹499 hai 💰";
+ else if(msg.includes("help"))
+   reply="Haan bolo, main help karunga 👍";
+
+ addMsg(reply,"left");
+}
+</script>
+
+</body>
+</html>

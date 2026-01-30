@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<style>
+body{margin:0;font-family:Arial}
+.header{background:#075e54;color:#fff;padding:15px}
+.add{padding:15px;text-align:center}
+button{padding:10px 20px;background:#25d366;border:none;color:#fff;border-radius:5px}
+.status{display:flex;align-items:center;padding:10px;border-bottom:1px solid #ddd}
+.status img{width:50px;height:50px;border-radius:50%;border:3px solid #25d366;margin-right:10px}
+</style>
+</head>
+<body>
+
+<div class="header">Status</div>
+
+<div class="add">
+  <input type="file" id="upload" accept="image/*" hidden>
+  <button onclick="upload.click()">➕ Add Status</button>
+</div>
+
+<div id="list"></div>
+
+<script>
+upload.onchange=function(){
+ let file=this.files[0];
+ let url=URL.createObjectURL(file);
+ localStorage.setItem("mystatus",url);
+ loadStatus();
+}
+
+function loadStatus(){
+ let url=localStorage.getItem("mystatus");
+ if(!url) return;
+ list.innerHTML=`
+  <div class="status" onclick="location.href='viewstatus.html'">
+    <img src="${url}">
+    <div>
+      <b>My Status</b><br>
+      <small>Just now</small>
+    </div>
+  </div>`;
+}
+
+loadStatus();
+</script>
+
+</body>
+</html>

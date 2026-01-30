@@ -1,0 +1,151 @@
+body{
+  margin:0;
+  font-family: 'Poppins', sans-serif;
+  background: linear-gradient(135deg,#667eea,#764ba2);
+  color:white;
+}
+
+.page{
+  padding:20px;
+  min-height:100vh;
+}
+
+.hidden{ display:none; }
+
+.logo{
+  text-align:center;
+  margin-top:100px;
+  font-size:36px;
+}
+
+input{
+  width:100%;
+  padding:14px;
+  margin:15px 0;
+  border:none;
+  border-radius:25px;
+  outline:none;
+}
+
+button{
+  width:100%;
+  padding:14px;
+  border:none;
+  border-radius:25px;
+  background:linear-gradient(135deg,#ff758c,#ff7eb3);
+  color:white;
+  font-size:16px;
+}
+
+.topbar{
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+}
+
+.menu{
+  position:absolute;
+  right:20px;
+  top:60px;
+  background:white;
+  color:black;
+  border-radius:10px;
+}
+
+.menu p{
+  margin:0;
+  padding:12px;
+}
+
+.chat-card{
+  display:flex;
+  gap:15px;
+  background:rgba(255,255,255,0.2);
+  padding:15px;
+  border-radius:15px;
+  margin-top:20px;
+}
+
+.avatar{
+  background:#ff7eb3;
+  width:45px;
+  height:45px;
+  border-radius:50%;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+}
+
+.messages{
+  background:white;
+  color:black;
+  height:60vh;
+  border-radius:15px;
+  padding:10px;
+  overflow-y:auto;
+}
+
+.msg{
+  background:#e5e7eb;
+  padding:8px;
+  margin:6px 0;
+  border-radius:10px;
+}
+
+.input-area{
+  display:flex;
+  gap:8px;
+  margin-top:10px;
+}
+
+.input-area input{
+  flex:1;
+}
+
+.card{
+  background:rgba(255,255,255,0.2);
+  padding:15px;
+  border-radius:15px;
+  margin:10px 0;
+}
+.chat-card{
+  display:flex;
+  align-items:center;
+  gap:15px;
+  background:rgba(255,255,255,0.2);
+  padding:15px;
+  border-radius:18px;
+  margin-top:15px;
+  cursor:pointer;
+}
+
+.avatar{
+  width:50px;
+  height:50px;
+  border-radius:50%;
+  background:linear-gradient(135deg,#ff758c,#ff7eb3);
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  font-weight:bold;
+  font-size:18px;
+}
+
+.chat-info h4{
+  margin:0;
+}
+
+.chat-info small{
+  opacity:0.8;
+}
+.back-btn{
+  font-size:26px;
+  padding:10px;
+  cursor:pointer;
+}
+.tap-box{
+  margin-top:6px;
+  font-size:12px;
+  opacity:0.7;
+}
