@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>My Courses</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#f2f4f8;
+}
+
+/* Header */
+.header{
+  background:#1e88e5;
+  color:#fff;
+  padding:15px 20px;
+  display:flex;
+  align-items:center;
+}
+.header a{
+  color:#fff;
+  text-decoration:none;
+  margin-right:15px;
+  font-size:18px;
+}
+.header h2{
+  margin:0;
+}
+
+/* Course list */
+.container{
+  padding:20px;
+}
+
+.course-card{
+  background:#fff;
+  padding:18px;
+  border-radius:12px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom:15px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+}
+
+.course-info{
+  max-width:65%;
+}
+.course-info h3{
+  margin:0 0 5px;
+  color:#333;
+}
+.course-info p{
+  margin:0;
+  font-size:14px;
+  color:#666;
+}
+
+/* Status badge */
+.status{
+  padding:5px 12px;
+  border-radius:20px;
+  font-size:13px;
+  color:#fff;
+  display:inline-block;
+  margin-top:6px;
+}
+.approved{ background:#28a745; }
+.pending{ background:#ffc107; color:#333; }
+.rejected{ background:#dc3545; }
+
+/* Actions */
+.actions{
+  text-align:right;
+}
+.actions a{
+  display:inline-block;
+  margin-left:8px;
+  margin-top:5px;
+  padding:7px 14px;
+  font-size:13px;
+  text-decoration:none;
+  border-radius:6px;
+  color:#fff;
+}
+.edit{ background:#17a2b8; }
+.lessons{ background:#6f42c1; }
+.view{ background:#007bff; }
+
+@media(max-width:768px){
+  .course-info{ max-width:100%; }
+  .actions{ width:100%; margin-top:10px; text-align:left; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <a href="teacher-dashboard.html">⬅</a>
+  <h2>My Courses</h2>
+</div>
+
+<div class="container">
+
+  <!-- Course 1 -->
+  <div class="course-card">
+    <div class="course-info">
+      <h3>Mathematics Class 10</h3>
+      <p>Basic to advanced maths concepts</p>
+      <span class="status approved">Approved</span>
+    </div>
+    <div class="actions">
+      <a href="course-view.html" class="view">View</a>
+      <a href="add-lesson.html" class="lessons">Lessons</a>
+      <a href="#" class="edit">Edit</a>
+    </div>
+  </div>
+
+  <!-- Course 2 -->
+  <div class="course-card">
+    <div class="course-info">
+      <h3>Science Class 9</h3>
+      <p>Physics, Chemistry & Biology</p>
+      <span class="status pending">Pending</span>
+    </div>
+    <div class="actions">
+      <a href="#" class="view">Preview</a>
+      <a href="#" class="edit">Edit</a>
+    </div>
+  </div>
+
+  <!-- Course 3 -->
+  <div class="course-card">
+    <div class="course-info">
+      <h3>English Grammar</h3>
+      <p>Grammar rules with examples</p>
+      <span class="status rejected">Rejected</span>
+    </div>
+    <div class="actions">
+      <a href="#" class="edit">Fix & Resubmit</a>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

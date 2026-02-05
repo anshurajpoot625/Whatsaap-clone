@@ -1,0 +1,193 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Course Lessons</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#f2f4f8;
+}
+
+/* Header */
+.header{
+  background:#1e88e5;
+  color:#fff;
+  padding:15px 20px;
+  display:flex;
+  align-items:center;
+}
+.header a{
+  color:#fff;
+  text-decoration:none;
+  margin-right:15px;
+  font-size:18px;
+}
+.header h2{
+  margin:0;
+}
+
+/* Container */
+.container{
+  padding:20px;
+}
+
+/* Add lesson form */
+.form-card{
+  background:#fff;
+  padding:20px;
+  border-radius:12px;
+  box-shadow:0 4px 12px rgba(0,0,0,0.1);
+  margin-bottom:20px;
+}
+.form-card h3{
+  margin-top:0;
+}
+.form-group{
+  margin-bottom:12px;
+}
+.form-group label{
+  display:block;
+  font-size:14px;
+  margin-bottom:5px;
+}
+.form-group input,
+.form-group textarea,
+.form-group select{
+  width:100%;
+  padding:10px;
+  border-radius:6px;
+  border:1px solid #ccc;
+  font-size:14px;
+}
+.form-group textarea{
+  resize:none;
+}
+.form-group button{
+  background:#28a745;
+  color:#fff;
+  padding:10px 20px;
+  border:none;
+  border-radius:6px;
+  font-size:15px;
+  cursor:pointer;
+}
+.form-group button:hover{
+  background:#1e7e34;
+}
+
+/* Lesson list */
+.lesson-card{
+  background:#fff;
+  padding:15px;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.08);
+  margin-bottom:12px;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  flex-wrap:wrap;
+}
+.lesson-info{
+  max-width:70%;
+}
+.lesson-info h4{
+  margin:0 0 5px;
+}
+.lesson-info p{
+  margin:0;
+  font-size:13px;
+  color:#666;
+}
+
+/* Actions */
+.actions a{
+  text-decoration:none;
+  padding:6px 12px;
+  border-radius:5px;
+  font-size:13px;
+  color:#fff;
+  margin-left:5px;
+}
+.edit{ background:#17a2b8; }
+.delete{ background:#dc3545; }
+
+@media(max-width:768px){
+  .lesson-info{ max-width:100%; }
+  .actions{ margin-top:10px; }
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+  <a href="my-courses.html">⬅</a>
+  <h2>Lessons - Mathematics Class 10</h2>
+</div>
+
+<div class="container">
+
+  <!-- Add Lesson -->
+  <div class="form-card">
+    <h3>Add New Lesson</h3>
+
+    <div class="form-group">
+      <label>Lesson Title</label>
+      <input type="text" placeholder="Enter lesson title">
+    </div>
+
+    <div class="form-group">
+      <label>Lesson Type</label>
+      <select>
+        <option>Video</option>
+        <option>PDF</option>
+        <option>Text</option>
+      </select>
+    </div>
+
+    <div class="form-group">
+      <label>Video / PDF URL</label>
+      <input type="text" placeholder="Paste video or PDF link">
+    </div>
+
+    <div class="form-group">
+      <label>Description</label>
+      <textarea rows="3" placeholder="Lesson description"></textarea>
+    </div>
+
+    <div class="form-group">
+      <button>Add Lesson</button>
+    </div>
+  </div>
+
+  <!-- Lesson List -->
+  <div class="lesson-card">
+    <div class="lesson-info">
+      <h4>Introduction to Algebra</h4>
+      <p>Video Lesson • 12 mins</p>
+    </div>
+    <div class="actions">
+      <a href="#" class="edit">Edit</a>
+      <a href="#" class="delete">Delete</a>
+    </div>
+  </div>
+
+  <div class="lesson-card">
+    <div class="lesson-info">
+      <h4>Algebra PDF Notes</h4>
+      <p>PDF Notes • 5 pages</p>
+    </div>
+    <div class="actions">
+      <a href="#" class="edit">Edit</a>
+      <a href="#" class="delete">Delete</a>
+    </div>
+  </div>
+
+</div>
+
+</body>
+</html>

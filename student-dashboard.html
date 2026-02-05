@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Student Dashboard - Teacher Plus 24/7</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: black;
+    }
+
+    /* ===== TOP BAR ===== */
+    .topbar {
+      background: linear-gradient(135deg, #004aad, #00c6ff);
+      color: white;
+      padding: 15px 20px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    .topbar h2 {
+      margin: 0;
+      font-size: 20px;
+    }
+
+    .logout {
+      background: white;
+      color: #004aad;
+      padding: 8px 15px;
+      border-radius: 20px;
+      text-decoration: none;
+      font-size: 13px;
+      font-weight: bold;
+    }
+
+    /* ===== DASHBOARD LAYOUT ===== */
+    .dashboard {
+      padding: 20px;
+    }
+
+    .welcome {
+      background:#10c6ff;
+      padding: 18px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      margin-bottom: 20px;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+      gap: 15px;
+    }
+
+    .card {
+      background: #07170e;
+      padding: 20px;
+      border-radius: 15px;
+      box-shadow: 0 0 12px rgba(0,0,0,0.12);
+      text-align: center;
+    }
+
+    .card h3 {
+      margin-bottom: 8px;
+      color: #004aad;
+    }
+
+    .card p {
+      font-size: 14px;
+      color : white;
+      margin-bottom: 12px;
+    }
+
+    .card a {
+      display: inline-block;
+      padding: 10px 20px;
+      background: #004aad;
+      color: white;
+      border-radius: 25px;
+      text-decoration: none;
+      font-size: 14px;
+      font-weight: bold;
+    }
+
+    .card a:hover {
+      background: black;
+    }
+
+    /* ===== ENROLLED COURSES ===== */
+    .section-title {
+      margin: 25px 0 10px;
+      font-size: 20px;
+      color: #004aad;
+    }
+
+    .course-list {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 15px;
+    }
+
+    .course {
+      background: rgb(110,137,140);
+      padding: 15px;
+      border-radius: 12px;
+      box-shadow: 0 0 10px rgba(0,0,0,0.10);
+      <img src="shadowcase.jpg" alt="random">
+    }
+
+    .course h4 {
+      margin: 0 0 5px;
+      color: #10c6ff;
+    }
+
+    .course p {
+    <img src="#" alt="#">
+      font-size: 15px;
+      color: black;
+    }
+
+    .course a {
+      display: inline-block;
+      margin-top: 10px;
+      font-size: 15px;
+      text-decoration: none;
+      color: black;
+      background: #15d6af;
+      padding: 5px 10px;
+      border-radius: 10px;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- ✅ TOP BAR -->
+  <div class="topbar">
+    <h2>Student Dashboard</h2>
+    <a href="logout.html" class="logout">Logout</a>
+  </div>
+
+  <!-- ✅ DASHBOARD -->
+  <div class="dashboard">
+
+    <!-- ✅ WELCOME -->
+    <div class="welcome">
+      <h3>Welcome, Student 👋</h3>
+      <p>Teacher Plus 24/7 me aapka swagat hai. Yahan se aap apne courses aur profile manage kar sakte ho.</p>
+    </div>
+
+    <!-- ✅ QUICK ACTION CARDS -->
+    <div class="cards">
+      <div class="card">
+        <h3>All Courses</h3>
+        <p>Sabhi available courses dekhiye.</p>
+        <a href="courses.html">View Courses</a>
+      </div>
+
+      <div class="card">
+        <h3>My Profile</h3>
+        <p>Apni profile details dekhiye.</p>
+        <a href="student-profile.html">View Profile</a>
+      </div>
+
+      <div class="card">
+        <h3>Support</h3>
+        <p>Koi problem ho to support se baat karein.</p>
+        <a href="#">Contact</a>
+      </div>
+    </div>
+
+    <!-- ✅ ENROLLED COURSES -->
+    <div class="section-title">My Enrolled Courses</div>
+
+    <div class="course-list">
+        
+
+      <div class="course">
+        <h4>Mathematics – Class 10</h4>
+        <p>By: Mr. Dileep</p>
+        <a href="course-view.html">Start Learning</a>
+      </div>
+
+      <div class="course">
+        <h4>Science – Class 9</h4>
+        <p>By: Miss Anjali</p>
+        <a href="course-view.html">Start Learning</a>
+      </div>
+      <div class="course">
+          <h4>Hindi - Class 8 </h4>
+          <p>By: Mr. Shubham</p>
+          <p></p>
+          <a href="course-view.html">Start Learning</a>
+      </div>
+      <div class="course">
+          <h4>General Knowledge</h4>
+          <p>By: Mr.Vikash</p>
+          
+          <a href="course-view.html">Start Learning</a>
+      </div>
+
+    </div>
+
+  </div>
+  
+</body>
+
+<script>
+    function logout() {
+      // Redirect to logout.html
+      window.location.href = "logout.html";
+    }
+  </script>
+
+</html>

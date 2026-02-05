@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Forget Password with OTP</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body{
+  margin:0;
+  font-family:Arial, sans-serif;
+  background:#020617;
+  color:#e5e7eb;
+  display:flex;
+  align-items:center;
+  justify-content:center;
+  height:100vh;
+}
+.container{
+  max-width:400px;
+  width:90%;
+  background:#0f172a;
+  padding:30px;
+  border-radius:14px;
+  box-shadow:0 10px 25px rgba(0,0,0,0.3);
+}
+h2{text-align:center;margin-bottom:10px;}
+p{text-align:center;color:#9ca3af;font-size:14px;margin-bottom:25px;}
+label{display:block;margin-bottom:6px;font-size:13px;color:#9ca3af;}
+input{
+  width:100%;
+  padding:12px;
+  border-radius:10px;
+  border:1px solid #1e293b;
+  background:transparent;
+  color:#e5e7eb;
+  font-size:14px;
+  margin-bottom:15px;
+}
+button{
+  width:100%;
+  padding:12px;
+  border:none;
+  border-radius:10px;
+  font-size:16px;
+  font-weight:600;
+  cursor:pointer;
+  background:#6366f1;
+  color:#fff;
+}
+button:hover{background:#4f46e5;}
+.links{text-align:center;margin-top:20px;font-size:14px;}
+.links a{color:#6366f1;text-decoration:none;font-weight:600;}
+.hidden{display:none;}
+</style>
+</head>
+
+<body>
+
+<div class="container">
+
+  <!-- Step 1: Enter email/mobile -->
+  <div id="step1">
+    <h2>Forget Password</h2>
+    <p>Enter your registered email or mobile</p>
+    <label>Email or Mobile</label>
+    <input type="text" id="user" placeholder="Enter email or mobile">
+    <button onclick="sendOTP()">Send OTP</button>
+    <div class="links">
+      <p><a href="login.html">Back to Login</a></p>
+    </div>
+  </div>
+
+  <!-- Step 2: Enter OTP -->
+  <div id="step2" class="hidden">
+    <h2>Enter OTP</h2>
+    <p>OTP sent to your email/mobile</p>
+    <label>OTP</label>
+    <input type="text" id="otpInput" placeholder="Enter OTP">
+    <button onclick="verifyOTP()">Verify OTP</button>
+  </div>
+
+  <!-- Step 3: Reset Password -->
+  <div id="step3" class="hidden">
+    <h2>Set New Password</h2>
+    <label>New Password</label>
+    <input type="password" id="newPass" placeholder="Enter new password">
+    <button onclick="setPassword()">Reset Password</button>
+  </div>
+
+</div>
+
+<script>
+let generatedOTP;
+
+// Step 1: Send OTP
+function sendOTP(){
+  const user = document.getElementById("user").value.trim();
+  if(user===""){
+    alert("Please enter email or mobile");
+    return;
+  }
+
+  // Simple validation
+  const emailPattern = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+  const mobilePattern = /^[6-9]\d{9}$/;
+  if(!(emailPattern.test(user) || mobilePattern.test(user))){
+    alert("Enter valid email or 10-digit mobile number");
+    return;
+  }
+
+  // Generate random 4-digit OTP
+  generatedOTP = Math.floor(1000 + Math.random()*9000);
+  alert("Your OTP is: " + generatedOTP); // Demo: show in alert
+  // Hide step1, show step2
+  document.getElementById("step1").classList.add("hidden");
+  document.getElementById("step2").classList.remove("hidden");
+}
+
+// Step 2: Verify OTP
+function verifyOTP(){
+  const otp = document.getElementById("otpInput").value.trim();
+  if(otp===""){
+    alert("Enter OTP");
+    return;
+  }
+  if(otp != generatedOTP){
+    alert("Incorrect OTP! Try again.");
+    return;
+  }
+
+  // OTP correct → Show reset password
+  document.getElementById("step2").classList.add("hidden");
+  document.getElementById("step3").classList.remove("hidden");
+}
+
+// Step 3: Set New Password
+function setPassword(){
+  const pass = document.getElementById("newPass").value.trim();
+  if(pass.length < 4){
+    alert("Password must be at least 4 characters");
+    return;
+  }
+
+  // Demo: Save password (localStorage for demo)
+  localStorage.setItem("demoPass", pass);
+  alert("Password reset successfully!");
+  window.location.href = "login.html";
+}
+</script>
+
+</body>
+</html>

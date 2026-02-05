@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<title>Teacher Dashboard</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<style>
+body{
+  margin:0;
+  font-family: Arial, sans-serif;
+  background:#f4f6f9;
+}
+.header{
+  background:#007bff;
+  color:#fff;
+  padding:15px;
+  text-align:center;
+}
+.dashboard{
+  padding:20px;
+  display:grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap:20px;
+}
+.card{
+  background:#fff;
+  padding:20px;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.1);
+  text-align:center;
+}
+.card h3{
+  margin:10px 0;
+  color:#333;
+}
+.card p{
+  color:#666;
+}
+.card a{
+  display:inline-block;
+  margin-top:15px;
+  padding:10px 18px;
+  background:#007bff;
+  color:#fff;
+  text-decoration:none;
+  border-radius:6px;
+}
+.card a:hover{
+  background:#0056b3;
+}
+</style>
+</head>
+<body>
+
+<div class="header">
+  <h2>Teacher Dashboard</h2>
+  <p>Welcome, Teacher 👨‍🏫</p>
+</div>
+
+<div class="dashboard">
+  <div class="card">
+    <h3>My Courses</h3>
+    <p>View & manage your uploaded courses</p>
+    <a href="my-courses.html">Open</a>
+  </div>
+
+  <div class="card">
+    <h3>Upload New Course</h3>
+    <p>Add a new course for students</p>
+    <a href="upload-course.html">Upload</a>
+  </div>
+
+  <div class="card">
+    <h3>Add Lessons</h3>
+    <p>Add videos, PDFs & quizzes</p>
+    <a href="upload-course.html">Add</a>
+  </div>
+
+  <div class="card">
+    <h3>Course Status</h3>
+    <p>Check approval status</p>
+    <a href="course-status.html">Check</a>
+  </div>
+</div>
+
+</body>
+</html>

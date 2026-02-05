@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Course Uploaded Successfully</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: linear-gradient(135deg, #43cea2, #185a9d);
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .success-card {
+      background: #fff;
+      padding: 30px;
+      width: 90%;
+      max-width: 420px;
+      border-radius: 12px;
+      text-align: center;
+      box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+    }
+
+    .success-icon {
+      font-size: 60px;
+      color: #28a745;
+    }
+
+    h2 {
+      margin: 15px 0;
+      color: #333;
+    }
+
+    p {
+      color: #666;
+      font-size: 15px;
+      margin-bottom: 25px;
+    }
+
+    .btn {
+      display: block;
+      text-decoration: none;
+      padding: 12px;
+      margin: 10px 0;
+      border-radius: 8px;
+      font-size: 16px;
+      color: #fff;
+      transition: 0.3s;
+    }
+
+    .btn-dashboard {
+      background: #007bff;
+    }
+
+    .btn-dashboard:hover {
+      background: #0056b3;
+    }
+
+    .btn-add {
+      background: #28a745;
+    }
+
+    .btn-add:hover {
+      background: #1e7e34;
+    }
+
+    .btn-view {
+      background: #6c757d;
+    }
+
+    .btn-view:hover {
+      background: #545b62;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="success-card">
+    <div class="success-icon">✅</div>
+    <h2>Course Uploaded Successfully!</h2>
+    <p>Your course has been uploaded and is now under review / live for students.</p>
+
+    <a href="teacher-dashboard.html" class="btn btn-dashboard">Go to Dashboard</a>
+    <a href="add-lesson.html" class="btn btn-add">Add Lessons / Videos</a>
+    <a href="my-courses.html" class="btn btn-view">View My Courses</a>
+  </div>
+
+</body>
+</html>

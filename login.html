@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Login Page</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    body{
+      margin:0;
+      padding:0;
+      font-family:Arial, sans-serif;
+      background:linear-gradient(135deg,#4f46e5,#6366f1);
+      height:100vh;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+    }
+    .login-box{
+      background:#fff;
+      width:100%;
+      max-width:380px;
+      padding:25px;
+      border-radius:14px;
+      box-shadow:0 10px 25px rgba(0,0,0,0.2);
+    }
+    h2{
+      text-align:center;
+      margin-bottom:20px;
+      color:#111;
+    }
+    label{
+      font-size:14px;
+      color:#444;
+    }
+    input{
+      width:100%;
+      padding:12px;
+      margin-top:6px;
+      margin-bottom:15px;
+      border-radius:8px;
+      border:1px solid #ccc;
+      font-size:14px;
+    }
+    button{
+      width:100%;
+      padding:12px;
+      background:#4f46e5;
+      color:#fff;
+      border:none;
+      border-radius:8px;
+      font-size:16px;
+      cursor:pointer;
+    }
+    button:hover{background:#4338ca;}
+    .links{
+      text-align:center;
+      margin-top:15px;
+      font-size:14px;
+    }
+    .links a{
+      color: #4f46e5 ;
+      text-decoration:none;
+      font-weight:600;
+    }
+    .top-header {
+  width: 100%;
+  background: none;
+  padding: 10px 20px;
+  box-sizing: border-box;
+}
+
+.logo-area {
+  display: flex;
+  align-items: center;
+}
+
+.logo-area img {
+  height: 45px;
+  margin-right: 12px;
+}
+
+.logo-area h1 {
+  color: #fff;
+  font-size: 22px;
+  margin: 0;
+  font-family: Arial, sans-serif;
+}
+
+    .top-header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  z-index: 1000;
+}
+body {
+  padding-top: 70px;
+}
+  </style>
+</head>
+<header class="top-header">
+  <div class="logo-area">
+    <img src="teacherplus.png" alt="Teacher Plus Logo">
+    
+  </div>
+</header>
+<body>
+
+<div class="login-box">
+  <h2>Login to Your Account</h2>
+
+  <label>Email or Mobile</label>
+  <input type="text" id="username" placeholder="Enter email or mobile">
+
+  <label>Password</label>
+  <input type="password" id="password" placeholder="Enter password">
+
+  <button>Login</button>
+
+  <div class="links">
+    <p><a href="forget.html">Forgot Password?</a></p>
+    <p>New user? <a href="1resister.html">Create Account</a></p>
+  </div>
+</div>
+
+<script>
+// Simple demo login
+function login(){
+  const user = document.getElementById("username").value.trim();
+  const pass = document.getElementById("password").value.trim();
+
+  if(user === "" || pass === ""){
+    alert("Please enter email/mobile and password");
+    return;
+  }
+
+  // Check against demo credentials (localStorage or predefined)
+  const savedUser = localStorage.getItem("user") || "demo@example.com";
+  const savedPass = localStorage.getItem("pass") || "1234";
+
+  if(user === savedUser && pass === savedPass){
+    localStorage.setItem("loggedIn", "true");
+    window.location.href = "student-dashboard.html";
+  } else {
+    alert("Account not found. Please register first.");
+    window.location.href = "register.html";
+  }
+}
+</script>
+
+</body>
+</html>
